@@ -16,6 +16,6 @@ The OLED SSD1306 display is turned off and on to reduce energy consumption.
 
 Warning: The current official SDKs for the Raspberry Pi Pico seem to work incorrectly. For example, the Pico freezes after a couple of minutes when using SLEEP mode.
 
-<to do> I will add a circuit diagram soon
+TODO: I will add a circuit diagram soon!
   
-To build this example application execute "cmake ." and then "make" in the SleepyPico directory.
+To build this example application, execute "cmake ." and then "make" in the SleepyPico directory.
