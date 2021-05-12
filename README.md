@@ -6,10 +6,10 @@ The source code comprises:
 - an OLED driver for the SSD1306 display
 - a driver for the BME280 sensor (Bosch) that measures humidity, temperature, pressure
 
-The mode is determined by a constant within SlewepyPico.cpp
-SLEEP        => Pico wakes up upon RTC timer alarm. Sleep time can be changed  in source code
-DORMANT => Pico wakes up when a high edge is detected on the WAKEUP_PIN
-NORMA    => Pico does not use the sleep modes
+The mode is determined by a constant within SleepyPico.cpp
+- SLEEP        => Pico wakes up upon RTC timer alarm. Sleep time can be changed  in source code
+- DORMANT => Pico wakes up when a high edge is detected on the WAKEUP_PIN
+- NORMAL    => Pico does not use the sleep modes
 In either mode the system frequency is reduced to 60 MHz to reduce consumption.
 The BME280 is executed in forced mode to increase power savings.
 The OLED SSD1306 display is turned off and on to reduce energy consumption.
