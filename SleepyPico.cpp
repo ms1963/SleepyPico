@@ -137,7 +137,7 @@ static void start_sleep() {
 }
 
 // sleep recovery
-void after_sleep(uint scb_orig, uint clock0_orig, uint clock1_orig){
+void after_sleep(uint scb_orig, uint clock0_orig, uint clock1_orig) {
     // Re-enable Ring Oscillator control
     rosc_write(&rosc_hw->ctrl, ROSC_CTRL_ENABLE_BITS);
 
@@ -145,9 +145,6 @@ void after_sleep(uint scb_orig, uint clock0_orig, uint clock1_orig){
     scb_hw->scr = scb_orig;
     clocks_hw->sleep_en0 = clock0_orig;
     clocks_hw->sleep_en1 = clock1_orig;
-
-    // re-initialize clocks
-    clocks_init();
 }
 
 /*
@@ -200,6 +197,7 @@ void welcome(picoSSOLED myOled) {
             myOled.write_string(0,0,3, (char*)" NORMAL MODE", FONT_8x8, 0, 1); 
     }
     sleep_ms(3000);
+    myOled.power(false);
 }
 
 int main() {
