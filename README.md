@@ -8,11 +8,10 @@ The source code comprises:
 - a driver for the BME280 sensor (Bosch) that measures humidity, temperature, pressure. 
 
 ## Notice about authors
-The OLED-Library was developed by Larry Bank.
-The BME280 SPI driver in C   was developed by Raspberry Pi Organization.
-The BME280 SPI driver in C++ was created by Michael Stal.
-The main application SleepyPico was developed by Michael Stal using code from the Raspberry Pi Organization
-and also using code from Githubcoder.
+- The OLED-Library was developed by Larry Bank.
+- The BME280 SPI driver in C   was developed by Raspberry Pi Organization.
+- The BME280 SPI driver in C++ was created by Michael Stal.
+- The main application SleepyPico was developed by Michael Stal using code from the Raspberry Pi Organization and also using code from Githubcoder.
 
 ## Some remarks on the code
 The mode is determined by a constant within SleepyPico.cpp
