@@ -123,7 +123,7 @@ void before_sleep() {
 // this method is called in MODE::SLEEP
 // when RTC triggers wake-up-event
 static void onWakeUp(void) {
-    uart_default_tx_wait_blocking();
+  // put wake up actions here
 }
 
 // this function is responsible for sleep
