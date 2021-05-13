@@ -1,3 +1,26 @@
+/*
+ SleepyPico uses sleep and dormant mode to put the Raspberry Pi Pico
+ into sleep for low power consumption.
+ The system frequency is reduced additionally.
+ In the circuit a BME280 is used for measuring temperature, pressure,
+ humidity. The BME280 is accessed using forced mode to let the sensor
+ sleep between measurements.
+ Information is displayed via a SSD1306 OLED display. Other similar 
+ displays might be used instead. The OLED is also put into sleep mode
+ between sleep phases.
+ To change the GPIO Pins respectively hardware components for I2C (SSD1306)
+ or SPI (BME280) change the definitions in the code.
+ You may also set the mode (SLLEP, DORMANT, NORMAL), the system frequency,
+ the sleep time using the definitions in the beginning of this file.
+ Unfortunately, the sleep and dormant modes do not operate correctly so 
+ that the Pico gets stuck at some point of time. So far, I could not
+ find any hints what is the reason for this problem.
+
+ (c) 2021, by Michael Stal
+ This example is published under MIT license. 
+*/
+
+
 #include "sleep.h"
 #include "pico/stdlib.h"
 #include <stdint.h>
@@ -32,7 +55,7 @@ const MODE mode = MODE::DORMANT;
 #define DISPLAY_TIME            10000   // time in milliseconds to show the measurement
 
 
-// OLED SD13ß6 (I2C) and RPI Pico
+// OLED SSD1306 (I2C) and RPI Pico
 #define SDA_PIN         4
 #define SCL_PIN         5
 #define PICO_I2C        i2c0
@@ -99,8 +122,7 @@ void before_sleep() {
 
 // this method is called in MODE::SLEEP
 // when RTC triggers wake-up-event
-static void sleep_callback(void) {
-    printf("RTC woke us up\n");
+static void onWakeUp(void) {
     uart_default_tx_wait_blocking();
 }
 
@@ -112,7 +134,7 @@ static void start_sleep() {
     // Reset real time clock to a value
     // see the defines for MINUTES_TO_WAIT, SECONDS_TO_WAIT
     if (mode == MODE::SLEEP) { // sleep until RTC triggers alarm
-        datetime_t t_alarm = {
+        datetime_t RTC_alarm = {
             .year  = 2021,
             .month = 05,
             .day   = 01,
@@ -121,9 +143,7 @@ static void start_sleep() {
             .min   = MINUTES_TO_WAIT,
             .sec   = SECONDS_TO_WAIT
         };
-        printf("Going to sleep.......\n");
-        uart_default_tx_wait_blocking();
-        sleep_goto_sleep_until(&t_alarm, &sleep_callback);
+        sleep_goto_sleep_until(&RTC_alarm, &onWakeUp);
     } 
     else 
     if (mode == MODE::DORMANT) { 
@@ -133,7 +153,6 @@ static void start_sleep() {
     
     // LED turned on to signal wake-up
     gpio_put(LED_PIN, 1);
-    puts("Licht an");
 }
 
 // sleep recovery
@@ -173,8 +192,8 @@ void draw_on_oled(picoSSOLED myOled, BME280::Measurement_t values) {
         myOled.write_string(0,0,5,prs, FONT_8x8, 0, 1); // write pressure
         myOled.write_string(0,0,6,alt, FONT_8x8, 0, 1); // write altitude
 
-        gpio_put(LED_PIN, 0);
-        puts("Licht aus");
+        gpio_put(LED_PIN, 0); // Turn off LED
+      
     
         sleep_ms(DISPLAY_TIME);    // wait so that user can read the display
         myOled.power(false); // display off
