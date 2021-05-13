@@ -17,7 +17,7 @@
  find any hints what is the reason for this problem.
 
  (c) 2021, by Michael Stal
- This example is published under MIT license. 
+ This example is published under a GPL 3.0 license. 
 */
 
 
