@@ -1,4 +1,5 @@
 # SleepyPico
+## What it is
 Weather Station Example for using sleep and dormant mode of Raspberry Pi Pico and SSD1306, BME280.
 
 The source code comprises:
@@ -26,8 +27,9 @@ The OLED SSD1306 display is turned off and on to reduce energy consumption.
 Warning: The current official SDKs for the Raspberry Pi Pico seem to work incorrectly. For example, the Pico freezes after a couple of minutes when using SLEEP mode.
 
   
-# Howto build the app
+## Howto build the app
 To build this example application, execute "cmake ." and then "make" in the SleepyPico directory.
 
+## Circuit diagram
 TODO: I will add a circuit diagram soon!
 
