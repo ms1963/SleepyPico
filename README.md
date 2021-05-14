@@ -30,5 +30,8 @@ Warning: The current official SDKs for the Raspberry Pi Pico seem to work incorr
 To build this example application, execute "cmake ." and then "make" in the src directory.
 
 ## Circuit diagram
+On the bottom left the BME280 sensor is depicted. The SSD1306 resides on the bottom right.
+The push button connected to 3.3V and GPIO 15 is used in DORMANT mode to wake up the Pico.
+The Pico is fed by a power supply (not shown) such as a battery (LiPo, LiIon or any other battery).
 ![Circuit diagram](https://github.com/ms1963/SleepyPico/blob/main/sleepypico_steckplatine.svg)
 
