@@ -27,7 +27,7 @@ Warning: The current official SDKs for the Raspberry Pi Pico seem to work incorr
 
   
 ## How to build the app
-To build this example application, execute "cmake ." and then "make" in the SleepyPico directory.
+To build this example application, execute "cmake ." and then "make" in the src directory.
 
 ## Circuit diagram
 ![Circuit diagram](https://github.com/ms1963/SleepyPico/blob/main/sleepypico_steckplatine.svg)
