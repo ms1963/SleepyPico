@@ -35,3 +35,5 @@ The push button connected to 3.3V and GPIO 15 is used in DORMANT mode to wake up
 The Pico is fed by a power supply (not shown) such as a battery (LiPo, LiIon or any other battery).
 ![Circuit diagram](https://github.com/ms1963/SleepyPico/blob/main/sleepypico_steckplatine.svg)
 
+There is a small video cast on the operation of the circuit here. [Movie-File]: https://www.dropbox.com/s/l9ga78pulkpua55/SleepyPico-Demo.MOV?dl=0
+
