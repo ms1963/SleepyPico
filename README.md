@@ -77,7 +77,7 @@ A detailed example is provided by SleepyPico.cpp.
 
 
 ## Warning
-Warning: The current official SDKs for the Raspberry Pi Pico seem to work incorrectly. For example, the Pico freezes after a couple of minutes when using sleep modes. UART output is not visible after sleeping.
+The current official SDKs for the Raspberry Pi Pico seem to work incorrectly. For example, the Pico freezes after a couple of minutes when using sleep modes. UART output is not visible after sleeping.
 
   
 ## How to build the app
