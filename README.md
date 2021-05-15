@@ -86,8 +86,12 @@ To build this example application, execute "cmake ." and then "make" in the src 
 ## Circuit diagram
 On the bottom left the BME280 sensor is depicted. The SSD1306 resides on the bottom right.
 The push button connected to 3.3V and GPIO 15 is used in DORMANT mode to wake up the Pico.
-The Pico is fed by a power supply (not shown) such as a battery (LiPo, LiIon or any other battery).
-![Circuit diagram](https://github.com/ms1963/SleepyPico/blob/main/sleepypico_steckplatine.svg)
+The Pico is fed by a power supply (not shown) such as a battery (Mains, Solar Cell, LiPo, LiIon or any other battery). For the weather station I am using a 18650 battery holder and a 18650 battery with 8800 mAh to power the circuit. 
+![Circuit diagram](https://github.com/ms1963/SleepyPico/blob/main/sleepypico_steckplatine.svg) 
 
-There is a small video cast on the operation of the circuit here. [Movie-File]: https://www.dropbox.com/s/l9ga78pulkpua55/SleepyPico-Demo.MOV?dl=0
+## Measuring power consumption
+Use an Ammeter/Multimeter or Oscilloscope for measuring power consumption. You need to place the Ammeter in series with the power source and the Pico. 
+
+## Video demo
+There is a short video on the operation of the circuit here. [Movie-File]: https://www.dropbox.com/s/l9ga78pulkpua55/SleepyPico-Demo.MOV?dl=0
 
