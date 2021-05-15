@@ -4,8 +4,8 @@ Weather Station Example for using sleep and dormant mode of Raspberry Pi Pico an
 
 The source code comprises:
 - the Raspberry Pi Pico application SleepyPico that uses the Pico's sleep and dormant modes. 
-- The library class Sleep that is responsible for the sleep functionality and provides an Arduino-like event loop.
-- an OLED driver for the SSD1306 display (by Larry Bank)
+- the library class Sleep that is responsible for the sleep functionality and provides an Arduino-like event loop.
+- an OLED driver for the SSD1306 display (by Larry Bank).
 - a driver for the BME280 sensor (Bosch) that measures humidity, temperature, pressure. 
 
 ## Notice about authors
