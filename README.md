@@ -27,42 +27,41 @@ The OLED SSD1306 display is turned off and on to reduce energy consumption.
 ## Example
 Here is an example how to use the Sleep class.
 A detailed example is provided by SleepyPico.cpp.
+    
 
-
-void setup() {
-   // code to be executed once before the  event loop
-}
-
-void loop() { 
-   // code to be executed in each loop iteration
-}
-
-#define WAKEUP_PIN 15 // Pin used in dormant mode to detect high edges
-
-datetime_t start = ... // date and time for initializing the RTC
-datetime_t end   = ... // date and time when alarm should happen
-
-int main() {
-    stdio_init_all();
-    sleep_ms(3000); // required by some OSses to make Pico visible        
-    // Change frequency of Pico to a lower value
-    printf("Changing system clock to lower frequency: %d KHz\n", SYSTEM_FREQUENCY_KHZ);
-    set_sys_clock_khz(SYSTEM_FREQUENCY_KHZ, true);   
-    // configure Sleep instance
-    // Dormant mode
-    // pointers to our loop() and setup() functions
-    // start and end of alarm period
-    // WAKEUP_PIN where high edges are detected
-    Sleep::instance().configure(Sleep::MODE::DORMANT, &setup, &loop, // start, end are datetime_t values
+    datetime_t start = .... // Start date to which RTC is set
+    datetime_t end.  = .... // DateTime at which alarm is triggered in SLEEP mode.
+    #define WAKEUP_PIN      // GPIO Pin to wait for high signal edges in DORMANT mode.
+    
+    void setup() {
+      // called once in the beginning
+    }
+    
+    void loop() {
+      // called in each iteration of the event loop
+    }
+    
+    int main() {
+      stdio_init_all();
+      sleep_ms(3000); // required by some OS
+      // Change frequency of Pico to a lower value
+      printf("Changing system clock to lower frequency: %d KHz\n", SYSTEM_FREQUENCY_KHZ);
+      set_sys_clock_khz(SYSTEM_FREQUENCY_KHZ, true);
+    
+    
+      // configure Sleep instance
+      // Dormant mode
+      // pointers to our loop() and setup() functions
+      // start and end of alarm period
+      // WAKEUP_PIN where high edges are detected
+      Sleep::instance().configure(Sleep::MODE::DORMANT, &setup, &loop,
                            start, end, WAKEUP_PIN);
-    // show clock frequencies
-    Sleep::instance().measure_freqs();
-    // start event loop
-    Sleep::instance().run(); 
-    return 0;
-}
-
-
+      // show clock frequencies
+      Sleep::instance().measure_freqs();
+      // start event loop
+      Sleep::instance().run(); 
+      return 0;
+     }
 
 
 ## Warning
