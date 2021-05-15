@@ -28,6 +28,7 @@ The OLED SSD1306 display is turned off and on to reduce energy consumption.
 Here is an example how to use the Sleep class.
 A detailed example is provided by SleepyPico.cpp.
 
+
 void setup() {
    // code to be executed once before the  event loop
 }
@@ -43,13 +44,10 @@ datetime_t end   = ... // date and time when alarm should happen
 
 int main() {
     stdio_init_all();
-    sleep_ms(3000); // required by some OSses to make Pico visible
-        
+    sleep_ms(3000); // required by some OSses to make Pico visible        
     // Change frequency of Pico to a lower value
     printf("Changing system clock to lower frequency: %d KHz\n", SYSTEM_FREQUENCY_KHZ);
-    set_sys_clock_khz(SYSTEM_FREQUENCY_KHZ, true);
-    
-    
+    set_sys_clock_khz(SYSTEM_FREQUENCY_KHZ, true);   
     // configure Sleep instance
     // Dormant mode
     // pointers to our loop() and setup() functions
@@ -63,6 +61,9 @@ int main() {
     Sleep::instance().run(); 
     return 0;
 }
+
+
+
 
 ## Warning
 Warning: The current official SDKs for the Raspberry Pi Pico seem to work incorrectly. For example, the Pico freezes after a couple of minutes when using sleep modes. UART output is not visible after sleeping.
