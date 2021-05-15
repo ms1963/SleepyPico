@@ -31,7 +31,7 @@ A detailed example is provided by SleepyPico.cpp.
 
     datetime_t start = .... // Start date to which RTC is set
     datetime_t end   = .... // DateTime at which alarm is triggered in SLEEP mode.
-    #define WAKEUP_PIN      // GPIO Pin to wait for high signal edges in DORMANT mode.
+    #define WAKEUP_PIN 15   // GPIO Pin to wait for high signal edges in DORMANT mode.
     
     void setup() {
       // called once in the beginning
