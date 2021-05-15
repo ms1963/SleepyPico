@@ -46,23 +46,30 @@ A detailed example is provided by SleepyPico.cpp.
       stdio_init_all();
       sleep_ms(3000); // required by some OSs to make Pico visible in UARTs
       
-      // Change frequency of Pico to a lower value
-      printf("Changing system clock to lower frequency: %d KHz\n", SYSTEM_FREQUENCY_KHZ);
-      set_sys_clock_khz(SYSTEM_FREQUENCY_KHZ, true);
+      // Change frequency of Pico to a lower value (60 MHz)
+      
+      printf("Changing system clock to lower frequency: %d KHz\n", 60000);
+      set_sys_clock_khz(60000, true);
     
     
-      // configure Sleep instance
-      // Dormant mode
-      // pointers to our loop() and setup() functions
-      // start and end of alarm period
-      // WAKEUP_PIN where high edges are detected:
+      // Configure Sleep instance
+      //     MODE (NORMAL, SLEEP, DORMANT)
+      //     Pointers to your setup() and loop() functions
+      //     For SLEEP mode: Start and end of alarm period for SLEEP
+      //     For DORMANT mode: WAKEUP_PIN where high edges are detected
       
       Sleep::instance().configure(Sleep::MODE::DORMANT, &setup, &loop,
                                   start, end, WAKEUP_PIN);
-      // show clock frequencies
+                                  
+      // Show clock frequencies:
+      
       Sleep::instance().measure_freqs();
       
-      // start event loop
+      // Start event loop.
+      // This will call setup()
+      // then put the Pico to sleep
+      // and finally call your loop() function
+      
       Sleep::instance().run(); 
       
       return 0;
