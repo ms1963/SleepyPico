@@ -66,9 +66,10 @@ A detailed example is provided by SleepyPico.cpp.
       Sleep::instance().measure_freqs();
       
       // Start event loop.
-      // This will call setup()
-      // then put the Pico to sleep
-      // and finally call your loop() function
+      // This will call setup() once,
+      // and then in each loop iteration
+      //       put the Pico to sleep,
+      //       call your loop() function.
       
       Sleep::instance().run(); 
       
