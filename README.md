@@ -84,6 +84,7 @@ The current official SDKs for the Raspberry Pi Pico seem to work incorrectly. Fo
 - UART output is not visible after sleeping.
 
 This might also be due to missing documentation of the sleep modes, e.g., what needs to be done to recover from sleep.
+
 A simple but dirty workaround would be to add a reset button (between Pico GND and the RUN Pin) to your circuit.
 
   
