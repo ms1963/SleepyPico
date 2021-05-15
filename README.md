@@ -34,16 +34,18 @@ A detailed example is provided by SleepyPico.cpp.
     #define WAKEUP_PIN 15   // GPIO Pin to wait for high signal edges in DORMANT mode.
     
     void setup() {
-      // called once in the beginning
+      // called once in the beginning: put your initialization code here
     }
     
     void loop() {
-      // called in each iteration of the event loop
+      // called in each iteration of the event loop: put your code
+      // here to read sensors, control actuators, etc.
     }
     
     int main() {
       stdio_init_all();
-      sleep_ms(3000); // required by some OS
+      sleep_ms(3000); // required by some OSs to make Pico visible in UARTs
+      
       // Change frequency of Pico to a lower value
       printf("Changing system clock to lower frequency: %d KHz\n", SYSTEM_FREQUENCY_KHZ);
       set_sys_clock_khz(SYSTEM_FREQUENCY_KHZ, true);
@@ -53,13 +55,16 @@ A detailed example is provided by SleepyPico.cpp.
       // Dormant mode
       // pointers to our loop() and setup() functions
       // start and end of alarm period
-      // WAKEUP_PIN where high edges are detected
+      // WAKEUP_PIN where high edges are detected:
+      
       Sleep::instance().configure(Sleep::MODE::DORMANT, &setup, &loop,
-                           start, end, WAKEUP_PIN);
+                                  start, end, WAKEUP_PIN);
       // show clock frequencies
       Sleep::instance().measure_freqs();
+      
       // start event loop
       Sleep::instance().run(); 
+      
       return 0;
      }
 
