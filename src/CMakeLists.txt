@@ -11,6 +11,7 @@ pico_sdk_init()
 add_executable(
   SleepyPico
   SleepyPico.cpp
+  Sleep.cpp
   bme280_spi.cpp
   ss_oled.cpp
   ss_oled.c
@@ -21,4 +22,4 @@ pico_enable_stdio_uart(SleepyPico 1)
 pico_enable_stdio_usb(SleepyPico 1)
 
 pico_add_extra_outputs(SleepyPico)
-target_link_libraries(SleepyPico pico_stdlib pico_runtime hardware_spi hardware_i2c hardware_rtc hardware_rosc hardware_pll hardware_sleep)
+target_link_libraries(SleepyPico hardware_sleep pico_stdlib pico_runtime hardware_spi hardware_i2c hardware_rtc hardware_rosc hardware_pll)
