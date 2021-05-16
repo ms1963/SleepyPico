@@ -38,9 +38,9 @@
 // wakes the Pico up - MODE::DORMANT
 //
 // Change these values according to your needs.
-// Maximum wait time is 59 mminutes and 59 seconds.
+// Maximum wait time is 59 minutes and 59 seconds.
 // If you need longer sleep time, change the two
-// datetime_t structs t and alarm_t below
+// datetime_t structs start and end below
 
 
 
@@ -154,7 +154,7 @@ void setup() {
     gpio_init(LED_PIN); // Use built-in LED to signal wake time
     gpio_set_dir(LED_PIN, GPIO_OUT);
 
-    // ss16xx OLED is initialized
+    // ssd1306 OLED is initialized
     oled_rc = myOled.init();
     myOled.set_back_buffer(ucBuffer);
     myOled.fill(0,1);
