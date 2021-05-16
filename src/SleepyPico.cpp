@@ -13,8 +13,8 @@
  You may also set the mode (SLEEP, DORMANT, NORMAL), the system frequency,
  the sleep time using the definitions in the beginning of this file.
  Unfortunately, the sleep and dormant modes do not operate correctly so 
- that the Pico gets stuck at from time to time. So far, I could not
- find any hints what is the reason for this problem.
+ that the Pico gets stuck from time to time. So far, I could not
+ find any hints what is the reason for this behaviour.
 
  (c) 2021, by Michael Stal
  This example is published under GPL 3.0 license. 
