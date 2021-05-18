@@ -6,7 +6,7 @@
  This library is published under GPL 3.0 license. 
 */
 
-#include "Sleep.hpp"
+#include "sleep.hpp"
 
 // configureSleep
 // loopfnc:   pointer to function being called after each
