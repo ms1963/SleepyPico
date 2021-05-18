@@ -73,7 +73,7 @@ private:
 
 private:
 // Data members:
-    // registered to be restored after sleep
+    // registers to be restored after sleep
     uint _scb_orig;           // clock registers saved before sleeping
     uint _en0_orig;           // ""
     uint _en1_orig;           // ""
