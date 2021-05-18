@@ -34,8 +34,8 @@ A detailed example is provided by sleepypico.cpp.
 
     
     const uint wakeup_pin = 15     // GPIO Pin to wait for high signal edges in DORMANT mode.
-    const bool edge       = true;  // we are waiting for leading edge on WAKEUP_PIN.
-    const bool active     = true;  // WAKEUP_PIN is in active high mode.
+    const bool edge       = true;  // we are waiting for a signal on the wakeup_pin.
+    const bool active     = true;  // wakeup_pin is in active high mode.
    
     
     void setup() {
