@@ -54,7 +54,7 @@ void Sleep::configureNormal(void (*setupfnc)(), void (*loopfnc)()) {
     _setup      = setupfnc;   
 }
 
-// retrieve the currentz mode of operation (i.e., SLEEP, NORMAL, DORMANT)
+// get the current mode of operation (i.e., SLEEP, NORMAL, DORMANT)
 Sleep::MODE Sleep::get_mode() {
     return _mode;
 }
