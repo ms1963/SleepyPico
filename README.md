@@ -13,16 +13,16 @@ The source code comprises:
 - The BME280 SPI driver in C   was developed by Raspberry Pi Organization.
 - The BME280 SPI driver in C++ was created by Michael Stal.
 - The Sleep class was created by Michael Stal.
-- The main application SleepyPico was developed by Michael Stal.
+- The main application sleepypico was developed by Michael Stal.
 
 ## Some remarks on the code
 The mode is determined by the configureXXX() method used of the Sleep class (sleep.cpp, sleep.hpp)
-- SLEEP        => Pico wakes up upon RTC timer alarm.  Sleep time can be changed.
-- DORMANT      => Pico wakes up when signal is detected on the wakeup_pin.
-                  boolean argument edge defines whether a leading edge (true) or trailing edge (false) 
-                  wakes up the Pico.
-                  boolean argument active defines whether GPIO pin is active high (true) or active low (false).
-- NORMAL       => Pico does not use the sleep modes
+- XXX = Sleep        => Pico wakes up upon RTC timer alarm.  Sleep time can be changed.
+- XXX = Dormant      => Pico wakes up when signal is detected on the wakeup_pin.
+                        Boolean argument edge defines whether a leading edge (true) or trailing edge (false) 
+                        wakes up the Pico.
+                        Boolean argument active defines whether GPIO pin is active high (true) or active low (false).
+- XXX = NORMAL       => Pico does not use one of the sleep modes.
 In either mode the system frequency is reduced to 60 MHz to reduce consumption.
 The BME280 is executed in forced mode to increase power savings.
 The OLED SSD1306 display is turned off and on to reduce energy consumption.
@@ -83,8 +83,9 @@ A detailed example is provided by sleepypico.cpp.
 
 
 ## Warning
-The current official SDKs for the Raspberry Pi Pico seem to work incorrectly. For example:
+The current official SDKs for the Raspberry Pi Pico seem to work incorrectly regarding the sleep modes. 
 
+For example:
 - the Pico freezes after some (nondeterministic) time when using sleep modes. 
 - UART output is not visible after sleeping.
 
@@ -103,6 +104,7 @@ and then
 - "make"
 
 in the src directory.
+
 Note: You'll find a precompiled sleepypico.uf2 in the subdirectory SleepyPico/bin
 
 ## Circuit diagram
