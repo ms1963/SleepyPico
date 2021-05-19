@@ -58,11 +58,12 @@ A detailed example is provided by sleepypico.cpp.
     
     
       // Configure Sleep instance
-      //     MODE (NORMAL, SLEEP, DORMANT)
+      // Parameters:
       //     Pointers to your setup() and loop() functions
-      //     For SLEEP mode: Start and end of alarm period for SLEEP
+      //     For SLEEP mode: Start and end of alarm period 
       //     For DORMANT mode: wakeup_pin where high edges are detected 
-      //     as well as edge (=true) and active(=true)
+      //     as well as edge (true: wake up on leading edge; false: wakeup on trailing edge) and 
+      //     active (true: Active HIGH; false :Active Low).
       
       Sleep::instance().configureDormant(&setup, &loop, wakeup_pin, edge, active);
                                   
