@@ -10,7 +10,7 @@ The source code comprises:
 
 ## Notice about authors
 - The OLED-Library was developed by Larry Bank.
-- The BME280 SPI driver in C   was developed by Raspberry Pi Organization.
+- The BME280 SPI driver in C   was developed the Raspberry Pi Foundation.
 - The BME280 SPI driver in C++ was created by Michael Stal.
 - The Sleep class was created by Michael Stal.
 - The main application sleepypico was developed by Michael Stal.
@@ -28,8 +28,7 @@ The BME280 is executed in forced mode to increase power savings.
 The OLED SSD1306 display is turned off and on to reduce energy consumption.
 
 ## Example
-Here is an example how to use the Sleep class.
-A detailed example is provided by sleepypico.cpp.
+Here is an example how to use the Sleep class  (a more detailed example is provided by sleepypico.cpp):
     
 
     
@@ -91,6 +90,7 @@ For example:
 - UART output is not visible after sleeping.
 
 This might also be due to missing documentation of the sleep modes, e.g., what needs to be done to recover from sleep.
+And, of course, it might be due to errors I might have made.
 
 A simple but dirty workaround would be to add a reset button (between Pico GND and the RUN Pin) to your circuit.
 
