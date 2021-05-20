@@ -17,7 +17,7 @@ The source code comprises:
 
 ## Some remarks on the code
 The mode is determined by the configureXXX() methods provided by the Sleep class (sleep.cpp, sleep.hpp)
-- XXX = Sleep        => Pico wakes up upon RTC timer alarm.  Sleep time can be changed.
+- XXX = Sleep        => Pico wakes up upon RTC timer alarm.  Sleep time can be dynamically changed.
 - XXX = Dormant      => Pico wakes up when signal is detected on the wakeup_pin.
                         Boolean argument edge defines whether a leading edge (true) or trailing edge (false) 
                         wakes up the Pico.
