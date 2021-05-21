@@ -19,19 +19,22 @@ The source code comprises:
 to GitHub user Rene for his very helpful suggestions how to improve the code.
 
 ## Some remarks on the code
-The mode is determined by the configureXXX() methods provided by the Sleep class (sleep.cpp, sleep.hpp)
-- XXX = Sleep        => Pico wakes up upon RTC timer alarm.  Sleep time can be dynamically changed.
-- XXX = Dormant      => Pico wakes up when signal is detected on the wakeup_pin.
+The mode is determined by the configure() methods provided by the Sleep class (Sleep.cpp, Sleep.hpp)
+
+- SLEEP              => Pico wakes up upon RTC timer alarm.  Sleep time can be dynamically changed.
+- DORMANT            => Pico wakes up when signal is detected on the wakeup_pin.
                         Boolean argument edge defines whether a leading edge (true) or trailing edge (false) 
                         wakes up the Pico.
                         Boolean argument active defines whether GPIO pin is active high (true) or active low (false).
-- XXX = NORMAL       => Pico does not use one of the sleep modes.
+- NORMAL             => Pico does not use one of the sleep modes.
+
+
 In either mode the system frequency is reduced to 60 MHz to reduce consumption.
 The BME280 is executed in forced mode to increase power savings.
 The OLED SSD1306 display is turned off and on to reduce energy consumption.
 
 ## Example
-Here is an example how to use the Sleep class  (a more detailed example is provided by sleepypico.cpp):
+Here is an example how to use the Sleep class  (a more detailed example is provided by SleepyPico.cpp):
     
 
     
