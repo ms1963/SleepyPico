@@ -139,7 +139,7 @@ void Sleep::after_sleep() {
 //      A) begin_sleep
 //      B) start_sleep
 //      C) after_sleep
-//    Within after_sleep _loop() is called
+//      D) _loop() is called
 void Sleep::run() {
     _setup(); // called once
     while(true) {
