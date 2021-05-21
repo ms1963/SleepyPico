@@ -85,9 +85,7 @@ void Sleep::measure_freqs(void) {
 }
 
 // saves clock registers
-// Initialize RTC for sleep mode
 void Sleep::before_sleep() {
-    // save current values for clocks
     _scb_orig = scb_hw->scr;
     _en0_orig = clocks_hw->sleep_en0;
     _en1_orig = clocks_hw->sleep_en1;
