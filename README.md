@@ -58,13 +58,13 @@ Here is an example how to use the Sleep class  (a more detailed example is provi
     
       // Configure Sleep instance
       // Parameters:
-      //     Pointers to your setup() and loop() functions
+      //     Lambdas for passing setup() and loop() 
       //     For SLEEP mode: Start and end of alarm period 
       //     For DORMANT mode: wakeup_pin where high edges are detected 
       //     as well as edge (true: wake up on leading edge; false: wakeup on trailing edge) and 
       //     active (true: Active HIGH; false :Active Low).
       
-      Sleep::instance().configureDormant(&setup, &loop, wakeup_pin, edge, active);
+      Sleep::instance().configure(setup, loop, wakeup_pin, edge, active);
                                   
       // Show clock frequencies:
       
