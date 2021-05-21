@@ -64,7 +64,11 @@ int oled_rc; // stores return codes of OLED driver
 const uint LED_PIN      = 25; // used to signal measurement
 const uint WAKEUP_PIN   = 15; // used to trigger wake-up in dormant mode MODE::DORMANT
 
-// start time to which RTC is set
+
+// !!!!!!!!! The following datetime_t structures
+// are only required for SLEEP mode
+
+// start time to which RTC is initially set
 datetime_t start = {   // time to which RTC is set
     .year  = 2021,
     .month = 05,
@@ -85,6 +89,7 @@ datetime_t start = {   // time to which RTC is set
     .min   = MINUTES_TO_WAIT,
     .sec   = SECONDS_TO_WAIT
  };
+ //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
  uint8_t ucBuffer[1024]; // buffer used for OLED
 
@@ -199,8 +204,8 @@ int main() {
     // Parameters
     // - loop() and setup() functions are passed as labmdas
     // - WAKEUP_PIN where GPIO signals are detected
-    // - in this case (true, false) means => detect 
-    //   leading edge with  WAKE_UP pin being active high
+    // - in this case (true, true) means =>  
+    //   detect leading edge with WAKEUP_PIN  being active high
     Sleep::instance().configure(setup, loop, WAKEUP_PIN, true, true);
 
 /*  // using Sleep mode instead
