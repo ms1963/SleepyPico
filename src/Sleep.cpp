@@ -130,7 +130,7 @@ void Sleep::after_sleep() {
     scb_hw->scr             = _scb_orig;
     clocks_hw->sleep_en0    = _en0_orig;
     clocks_hw->sleep_en1    = _en1_orig;
-    _loop();
+    _loop(); // calling user-defined loop() function
 }
 
 
