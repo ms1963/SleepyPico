@@ -68,7 +68,7 @@ Here is an example how to use the Sleep class  (a more detailed example is provi
       //     For SLEEP mode: Start and end of alarm period 
       //     For DORMANT mode: wakeup_pin where high edges are detected 
       //     as well as edge (true: wake up on leading edge; false: wakeup on trailing edge) and 
-      //     active (true: Active HIGH; false :Active Low).
+      //     active (true: Active HIGH; false: Active Low).
       
       Sleep::instance().configure(setup, loop, wakeup_pin, edge, active);
                                   
