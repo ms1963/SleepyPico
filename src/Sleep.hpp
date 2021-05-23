@@ -58,7 +58,7 @@ private:
     void before_sleep();
 
     // this function is responsible for sleep
-    // sleep ends with high edge (DORMANT) or when t_alarm is reached (SLEEP)
+    // sleep ends with high edge (DORMANT) or when RTC alarm is reached (SLEEP)
     void start_sleep(); 
 
     // sleep recovery
@@ -69,7 +69,7 @@ private:
 
 private:
 // Data members:
-    // registered to be restored after sleep
+    // registers to be saved before sleep and restored after sleep
     uint _scb_orig;           // clock registers saved before sleeping
     uint _en0_orig;           // ""
     uint _en1_orig;           // ""
