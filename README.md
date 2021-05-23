@@ -96,7 +96,7 @@ For example:
 - UART output is not visible after sleeping.
 
 This might also be due to missing documentation of the sleep modes, e.g., what needs to be done to recover from sleep.
-And, of course, it might be due to errors I made.
+And, of course, it might be due to mistakes I made.
 
 A simple but dirty workaround would be to add a reset button (between Pico GND and the RUN Pin) to your circuit.
 
