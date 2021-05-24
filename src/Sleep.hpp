@@ -54,14 +54,14 @@ public:
 
 private:
     // saves clock registers
-    // Initialize RTC for sleep mode
     void before_sleep();
 
     // this function is responsible for sleep
-    // sleep ends with high edge (DORMANT) or when RTC alarm is reached (SLEEP)
+    // sleep ends with edge on WAKEUP_PIN (DORMANT) or when 
+    // specified RTC alarm is reached (SLEEP)
     void start_sleep(); 
 
-    // sleep recovery
+    // sleep recovery: restores clock registers, re-enables ROSC 
     void after_sleep();
 
     // private constructor
