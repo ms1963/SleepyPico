@@ -203,7 +203,7 @@ int main() {
     
     // configure Sleep instance with Dormant mode
     // Parameters
-    // - loop() and setup() functions are passed as labmdas
+    // - loop() and setup() functions are passed as lambdas
     // - WAKEUP_PIN where GPIO signals are detected
     // - in this case (true, true) means =>  
     //   detect leading edge with WAKEUP_PIN  being active high
