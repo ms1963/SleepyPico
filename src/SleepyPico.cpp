@@ -62,6 +62,7 @@ int oled_rc; // stores return codes of OLED driver
 
 // BUILT-IN LED
 const uint LED_PIN      = 25; // used to signal measurement
+// WAKE-UP PIN 
 const uint WAKEUP_PIN   = 15; // used to trigger wake-up in dormant mode MODE::DORMANT
 
 
