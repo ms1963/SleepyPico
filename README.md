@@ -13,7 +13,7 @@ The source code comprises:
 - The BME280 SPI driver in C   was developed the Raspberry Pi Foundation.
 - The BME280 SPI driver in C++ was created by Michael Stal.
 - The Sleep class was created by Michael Stal.
-- The main application sleepypico was developed by Michael Stal.
+- The main application SleepyPico was developed by Michael Stal.
 
 ## Thanks
 to GitHub user Rene for his very helpful suggestions how to improve the code.
