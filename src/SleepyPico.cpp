@@ -192,7 +192,9 @@ void loop() {
 }
 
 int main() {
-    stdio_init_all();
+    // execution might hang after a few sleep cycles
+    // when uncommenting the following line:
+    // stdio_init_all(); 
 
     sleep_ms(3000); // required by some OSses to make Pico visible
         
