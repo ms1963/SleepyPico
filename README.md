@@ -53,7 +53,7 @@ Here is an example how to use the Sleep class  (a more detailed example is provi
     }
     
     int main() {
-      stdio_init_all();
+      // stdio_init_all();
       sleep_ms(3000); // required by some OSs to make Pico visible in UARTs
       
       // Change frequency of Pico to a lower value (60 MHz)
